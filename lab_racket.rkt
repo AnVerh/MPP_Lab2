@@ -102,7 +102,7 @@
 (define intervals (beta-interval-partition data alphabet))
 (for ([key (in-dict-keys intervals)]
       [values (in-dict-values intervals)])
-  (displayln (format "Interval ~a: ~a\n" key values)))
+  (displayln (format "Інтервал ~a: ~a\n" key values)))
 ;(print-hash-table intervals)
 ;(print-dict intervals)
 ;;;
@@ -119,11 +119,12 @@
 
 
 
-(displayln "Initial data:")
+(displayln "Початкові дані:")
 (for ([num data])
   (display num)
   (display " "))
 (newline)
+(displayln "Лінгвістичний ряд: ")
 (displayln letter-data)
 
 (define ling-matrix (make-vector alphabet-size))
@@ -141,4 +142,6 @@
           (void)))
     (vector-set! (vector-ref ling-matrix i) j appear)))
 
+(newline)
+(displayln "Матриця передування:")
 (displayln (vector*->matrix ling-matrix))
